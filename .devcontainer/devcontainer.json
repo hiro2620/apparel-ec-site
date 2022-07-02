@@ -1,0 +1,12 @@
+{
+  "name": "web_dev",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "web",
+  "workspaceFolder": "/workspace",
+  "extensions": [
+    "oderwat.indent-rainbow",
+    "ms-python.python",
+    "samuelcolvin.jinjahtml",
+    "esbenp.prettier-vscode"
+  ]
+}
