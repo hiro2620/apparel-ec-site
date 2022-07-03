@@ -1,6 +1,14 @@
 <h1>ユーザー登録</h1>
 <form action="{% url 'users:signup' %}" method="post">
   {% csrf_token %}
-  {{ form.as_p }}
+  {% for field in form %}
+    <div class="input-group mb-3">
+      <th>{{ field.label }}:</th>
+      <td>{{ field }}</td>
+      <td>
+        {% if field.field.required %}必須{% endif %}
+      </td>
+    </div>
+  {% endfor %}
   <p><input type="submit" value="登録"></p>
 </form>
