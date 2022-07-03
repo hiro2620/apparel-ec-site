@@ -1,0 +1,19 @@
+<h1>{{ user.get_full_name }}さんの情報</h1>
+<ul>
+  <li>名前:
+    {{ user.username }}
+  </li>
+  <li>性別:
+    {{ user.profile.gender }}
+  </li>
+  <li>生年月日:
+    {{ user.profile.birth_date }}
+  </li>
+  <li>住所:
+    {{ user.profile.location }}
+  </li>
+  <li>好きな言葉:
+    {{ user.profile.favorite_words }}
+  </li>
+</ul>
+<a href="{% url 'shop:home' %}">戻る</a>
