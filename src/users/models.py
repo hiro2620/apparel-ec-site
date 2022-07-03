@@ -6,10 +6,9 @@ from django.contrib.auth.models import User
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    gender = models.CharField(max_length=20, blank=True, default=None)
-    birth_date = models.DateField(null=True, blank=True, default=None)
-    location = models.CharField(max_length=30, blank=True, default=None)
-    favorite_words = models.CharField(max_length=50, blank=True, default=None)
+    zipcode = models.CharField(blank=False, null=False, max_length=7)
+    address = models.CharField(blank=False, null=False, max_length=30)
+    gender = models.IntegerField(blank=False, null=False, default=2)
 
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):

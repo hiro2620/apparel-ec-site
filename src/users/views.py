@@ -20,9 +20,8 @@ def signup(request):
             user = form.save()
             user.refresh_from_db()
             user.profile.gender = form.cleaned_data.get('gender')
-            user.profile.birth_date = form.cleaned_data.get('birth_date')
-            user.profile.location = form.cleaned_data.get('location')
-            user.profile.favorite_words = form.cleaned_data.get('favorite_words')
+            user.profile.address = form.cleaned_data.get('address')
+            user.profile.zipcode = form.cleaned_data.get('zipcode')
 
             user.save()
             raw_password = form.cleaned_data.get('password1')
